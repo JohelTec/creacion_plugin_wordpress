@@ -1,0 +1,6 @@
+[pvillas_reservation] reservacion
+
+[pvillas_condominiums_list] condominios
+
+[pvillas_properties_list] casas
+
