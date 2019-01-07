@@ -16,7 +16,7 @@
             if(!is_singular('post')){
                 return $content;
             }else{
-                $categorias = get_the_terms(get_the_ID(), "category");// te da un array 
+                $categorias = get_the_terms(get_the_ID(), "category");// te da un array asociando el uid con la categoria
                 $array = array(); // este array se pasa a un array simple el cual se saca los datos por un foreach
                 foreach($categorias as $categoria){
                     $array[]=$categoria->term_id;
