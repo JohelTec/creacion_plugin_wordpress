@@ -9,8 +9,8 @@
  * License :GPL2
  * 
  */
-    add_filter('the_title', "cc_filtrosEditTitulo");
-    add_filter('the_content',"cc_filtrosEditCuerpo");
+    add_filter('the_title', "cc_filtrosEditTitulo"); // modifica el titulo de los post
+    add_filter('the_content',"cc_filtrosEditCuerpo");// mofifica el contenido de los post
     
     // Esta funcion agrega un texto hola delante de cada titulo
         if(!function_exists("cc_filtrosEditTitulo")){

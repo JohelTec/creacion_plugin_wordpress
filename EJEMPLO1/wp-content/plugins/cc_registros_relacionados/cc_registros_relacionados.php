@@ -9,24 +9,26 @@
  * License :GPL2
  * 
  */
+defined( 'ABSPATH' ) or die( 'Vamos a llevarnos bien...' ); // Primera linea de codigo
     add_filter("the_content", "cc_post_contenido_relacionados");
     
     if(!function_exists("cc_post_contenido_relacionados")){
         function cc_post_contenido_relacionados($content){
-            if(!is_singular('post')){
+            if(!is_singular('post')){ // preguntamos si estamsos parados en un detalle de post
                 return $content;
-            }else{
+            }else{  // si estamos en detalle
                 $categorias = get_the_terms(get_the_ID(), "category");// te da un array asociando el uid con la categoria
+                
                 $array = array(); // este array se pasa a un array simple el cual se saca los datos por un foreach
                 foreach($categorias as $categoria){
                     $array[]=$categoria->term_id;
                 }
-
+                
                 $loop = new WP_Query( // wp_query se usa para interactuar con las tablas
                     array(
                         'category_in' => $array, // muestre todos los registros que esten asosiados a la categoria
                         'posts_per_page' =>  2,// catidad de registro por pagina q muestra
-                        'post_not_in' => array(get_the_ID()),// busca todos los registros asosiados pero no te muestra la publicacion en el cual se esta 
+                        'post_not_in' => array(get_the_ID()),// no muestra la propia publicacion 
                         'orderby' => 'rand' // cargan de forma aleatoria
                     )
                 );

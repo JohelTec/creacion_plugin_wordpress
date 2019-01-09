@@ -9,6 +9,9 @@
  * License :GPL2
  * 
  */
+defined( 'ABSPATH' ) or die( 'Vamos a llevarnos bien...' ); // Primera linea de codigo
+
+
     add_action('init', 'cc_codigo_corto');  // inicializa
     
     if(!function_exists("cc_codigo_corto")){
@@ -19,7 +22,7 @@
 
     }
     if(!function_exists("codigo_corto")){ // carga una funcion con el shordcode
-        function codigo_corto($args,$content){ // args permiten traer variables desde afuera
+        function codigo_corto($args,$content){ // args: trae parametros desde el bakend [cesar num1= "1"] // $content: trae parametros desde adentro
             // return "<hr/> <strong>".$content."</strong>";
             $num1 = $args["num1"];
             $num2 = $args["num2"];
