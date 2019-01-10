@@ -1,4 +1,4 @@
-<?php 
+<?php  
 /**
  * Plugin Name: cc_metadatos
  * Plugin URI: http://www.google.com.pe

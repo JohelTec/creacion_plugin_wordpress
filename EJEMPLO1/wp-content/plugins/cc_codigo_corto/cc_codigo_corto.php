@@ -9,7 +9,7 @@
  * License :GPL2
  * 
  */
-defined( 'ABSPATH' ) or die( 'Vamos a llevarnos bien...' ); // Primera linea de codigo
+
 
 
     add_action('init', 'cc_codigo_corto');  // inicializa
